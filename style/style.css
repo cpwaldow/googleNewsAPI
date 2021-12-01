@@ -1,0 +1,13 @@
+.item {
+  margin-bottom: 8px;
+  border: 1px solid black;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+}
+
+#news-list {
+  list-style-type: none;
+}
