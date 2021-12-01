@@ -7,22 +7,29 @@ fetch(currentNews)
   .then((response) => response.json())
   .then((data) => {
     for (let index = 0; index < data.articles.length; index += 1) {
+      const title = data.articles[index].title;
+      const picture = data.articles[index].urlToImage;
+
       console.log(data.articles[index]);
-      createItem(data.articles[index].title);
-      setImage(data.articles[index].urlToImage);
+      createItem(title, picture);
     }
   });
 
-function createItem(titleNews) {
+function createItem(titleNews, imageNews) {
   const item = document.createElement('li');
-  item.classList.add('item');
-  item.innerText = titleNews;
-  list.appendChild(item);
-}
-
-function setImage(src) {
+  const text = document.createElement('p');
   const img = document.createElement('img');
-  img.setAttribute('src', src);
-  list.appendChild(img);
-  console.log(src);
+
+  item.classList.add('item');
+  img.classList.add('images');
+  text.classList.add('text');
+
+  text.innerText = titleNews;
+  img.setAttribute('src', imageNews);
+  img.setAttribute('loading', 'lazy');
+
+  item.appendChild(text);
+  item.appendChild(img);
+
+  list.appendChild(item);
 }
