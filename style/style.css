@@ -1,0 +1,29 @@
+.item {
+  margin-bottom: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px;
+  width: 50%;
+}
+
+.item:hover {
+  box-shadow: 3px 3px rgb(136, 136, 136), -1em 0 0.4em rgb(136, 136, 136);
+  transform: translate(6px);
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+}
+
+#news-list {
+  list-style-type: none;
+}
+
+.images {
+  width: 50%;
+}
+
+.text {
+  font-weight: bold;
+}
